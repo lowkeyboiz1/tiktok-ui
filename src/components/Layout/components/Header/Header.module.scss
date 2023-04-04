@@ -14,8 +14,12 @@
     width: var(--default-layout-width);
 }
 
+.search-result,
 .search {
     width: 361px;
+}
+
+.search {
     height: var(--header-height);
     display: flex;
     background-color: rgba(22, 24, 35, 0.06);
@@ -35,7 +39,6 @@
         background-color: transparent;
         font-size: 1.6rem;
         caret-color: red;
-
     }
     input:not(:placeholder-shown) ~ .btn-search {
         color: rgba(22, 24, 35, 0.75);
@@ -56,6 +59,13 @@
     }
 }
 
+.search-title {
+    padding: 5px 12px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: rgba(22, 24, 35, 0.5);
+}
+
 .clear,
 .loading {
     position: absolute;
@@ -66,7 +76,6 @@
     color: rgba(22, 24, 35, 0.34);
     display: none;
 }
-
 
 .btn-search {
     width: var(--btn-search-width);
