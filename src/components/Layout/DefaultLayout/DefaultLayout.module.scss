@@ -5,7 +5,9 @@
 }
 
 .container {
-    width: var(--default-layout-width);
+    // width: var(--default-layout-width);
+    width: 100%;
+    padding: var(--padding-header);
     display: flex;
 }
 
