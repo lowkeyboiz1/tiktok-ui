@@ -23,6 +23,7 @@
 
 .search {
     height: var(--header-height);
+    width: 415px;
     display: flex;
     background-color: rgba(22, 24, 35, 0.06);
     border-radius: var(--header-search-border-radius);
@@ -96,10 +97,38 @@
     }
 }
 
+//Actions 
+
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
 .more-btn {
     cursor: pointer;
     font-size: 2rem;
     margin-left: 16px;
     background-color: transparent;
     padding: 4px 8px;
+}
+
+.user-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    object-fit: cover;
+    margin-left: 8px;
+
+}
+
+.action-btn {
+    background-color: transparent;
+    cursor: pointer;
+
+}
+
+.action-img {
+    cursor: pointer;
 }
