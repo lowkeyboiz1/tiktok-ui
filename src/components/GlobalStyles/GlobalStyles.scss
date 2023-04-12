@@ -19,6 +19,9 @@
     --header-height-spacer: 9px;
 
     --btn-search-width: 52px;
+
+    //font-family
+    --font-family: 'ProximaNova', sans-serif;
 }
 
 * {
@@ -32,7 +35,7 @@ html {
 }
 
 body {
-    font-family: 'ProximaNova', sans-serif;
+    font-family: var(--font-family);
     font-size: 1.6rem;
     line-height: 1.5;
     text-rendering: optimizeSpeed;
