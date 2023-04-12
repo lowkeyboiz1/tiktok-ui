@@ -8,6 +8,7 @@ import images from '~/assets/images';
 import classNames from 'classnames/bind';
 import styles from './Header.module.scss';
 
+import { Link } from 'react-router-dom';
 import Button from '~/components/Button';
 import Menu from '~/components/Popper/Menu';
 
@@ -92,7 +93,9 @@ function Header() {
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
-                <img src={images.logo} alt="tiktok" />
+                <Link to="/" className={cx('logo-link')}>
+                    <img src={images.logo} alt="tiktok" />
+                </Link>
                 <Search />
                 <div className={cx('actions')}>
                     {currentUser ? (
