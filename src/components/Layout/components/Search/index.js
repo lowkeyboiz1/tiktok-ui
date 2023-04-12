@@ -45,6 +45,7 @@ function Search() {
             interactive
             offset={[10, 10]}
             visible={showResult && searchResult.length > 1}
+            placement='bottom'
             render={(attrs) => (
                 <div className={cx('search-result')} tabIndex="-1" {...attrs}>
                     <PopperWrapper>
