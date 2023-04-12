@@ -1,11 +1,11 @@
+import React from 'react';
 import { useEffect, useState } from 'react';
-import 'tippy.js/dist/tippy.css';
-import Tippy from '@tippyjs/react/headless';
+import Tippy from '@tippyjs/react';
+import 'tippy.js/dist/tippy.css'; // optional
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
     faCircleXmark,
     faSpinner,
-    faMagnifyingGlass,
     faPlus,
     faEllipsisVertical,
     faLanguage,
@@ -23,6 +23,8 @@ import Menu from '~/components/Popper/Menu';
 
 import { faUser, faCircleQuestion, faKeyboard, faMoon } from '@fortawesome/free-regular-svg-icons';
 import { faTiktok } from '@fortawesome/free-brands-svg-icons';
+import { InboxIcon, MessageIcon, SearchIcon } from '~/components/Icons';
+import Image from '~/components/Image';
 
 const cx = classNames.bind(styles);
 
@@ -132,7 +134,7 @@ function Header() {
                         </button>
                         <FontAwesomeIcon className={cx('loading')} icon={faSpinner} />
                         <button className={cx('btn-search')}>
-                            <FontAwesomeIcon icon={faMagnifyingGlass} />
+                            <SearchIcon />
                         </button>
                     </div>
                 </Tippy>
@@ -143,16 +145,17 @@ function Header() {
                             <Button text leftIcon={<FontAwesomeIcon icon={faPlus} />}>
                                 <span>Upload</span>
                             </Button>
-                            <Tippy content="Messages" placement="bottom">
-                                <img
-                                    className={cx('action-img')}
-                                    src="https://lf16-tiktok-web.ttwstatic.com/obj/tiktok-web/tiktok/web/node/_next/static/images/icon_message-f79009b04f8be390a56b071dd82e1620.svg"
-                                    alt="message"
-                                />
+                            <Tippy delay={[0, 50]} content="Message" placement="bottom">
+                                <button className={cx('action-btn')}>
+                                    <MessageIcon />
+                                </button>
                             </Tippy>
 
-                            <Tippy content="inbox">
-                                <img className={cx('action-img')} src={images.message} alt="inbox" />
+                            <Tippy delay={[0, 50]} content="Inbox" placement="bottom">
+                                <button className={cx('action-btn')}>
+                                    <InboxIcon />
+                                    <span className={cx('badge')}>12</span>
+                                </button>
                             </Tippy>
                         </>
                     ) : (
@@ -168,10 +171,10 @@ function Header() {
 
                     <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
                         {currentUser ? (
-                            <img
+                            <Image
                                 className={cx('user-avatar')}
-                                src="https://media.vov.vn/sites/default/files/styles/large/public/2021-04/a1_0.png"
-                                alt="user-img"
+                                src="https://files.fullstack.edu.vn/f8-prod/user_avatars/1/623d4b2d95cec.png"
+                                alt="Nguyen Van A"
                             />
                         ) : (
                             <button className={cx('more-btn')}>

@@ -37,6 +37,27 @@ body {
     line-height: 1.5;
     text-rendering: optimizeSpeed;
 }
+body {
+    .tippy-box {
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 1.6rem;
+        line-height: 2.2rem;
+        background-color: rgba(84, 84, 84, 0.92);
+    }
+
+    .tippy-arrow {
+        color: rgba(84, 84, 84, 0.92);
+    }
+
+    .tippy-content {
+        padding: 8px 9px;
+    }
+
+    .tippy-box[data-placement^='bottom'] > .tippy-arrow:before {
+        top: -8px;
+    }
+}
 
 input,
 button {
@@ -49,9 +70,7 @@ a {
     color: var(--black);
 }
 
-
-
-//Fonts 
+//Fonts
 @font-face {
     font-family: ProximaNova;
     src: url('/assets/fonts/Proxima-Nova-Regular.woff2');
@@ -63,7 +82,7 @@ a {
     src: url('/assets/fonts/ProximaNova-Semibold.woff2');
     font-weight: 600;
 }
-
+//a
 @font-face {
     font-family: ProximaNova;
     src: url('/assets/fonts/Proxima-Nova-Bold.woff');
