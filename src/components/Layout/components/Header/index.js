@@ -148,7 +148,8 @@ const MENU_ITEMS = [
                     type: 'Language',
                     code: 'vi',
                     title: 'Tiếng Việt',
-                },{
+                },
+                {
                     type: 'Language',
                     code: 'vi',
                     title: 'Tiếng Việt',
@@ -162,7 +163,8 @@ const MENU_ITEMS = [
                     type: 'Language',
                     code: 'vi',
                     title: 'Tiếng Việt',
-                },{
+                },
+                {
                     type: 'Language',
                     code: 'vi',
                     title: 'Tiếng Việt',
@@ -176,7 +178,8 @@ const MENU_ITEMS = [
                     type: 'Language',
                     code: 'vi',
                     title: 'Tiếng Việt',
-                },{
+                },
+                {
                     type: 'Language',
                     code: 'vi',
                     title: 'Tiếng Việt',
@@ -190,7 +193,8 @@ const MENU_ITEMS = [
                     type: 'Language',
                     code: 'vi',
                     title: 'Tiếng Việt',
-                },{
+                },
+                {
                     type: 'Language',
                     code: 'vi',
                     title: 'Tiếng Việt',
@@ -204,7 +208,8 @@ const MENU_ITEMS = [
                     type: 'Language',
                     code: 'vi',
                     title: 'Tiếng Việt',
-                },{
+                },
+                {
                     type: 'Language',
                     code: 'vi',
                     title: 'Tiếng Việt',
@@ -307,7 +312,7 @@ function Header() {
 
                     {/* Menu Tippy */}
 
-                    <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
+                    <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange} >
                         {currentUser ? (
                             <Image className={cx('user-avatar')} src={images.avatarUser} alt="K" />
                         ) : (
