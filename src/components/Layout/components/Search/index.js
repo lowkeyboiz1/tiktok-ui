@@ -43,10 +43,10 @@ function Search() {
     return (
         <HeadlessTippy
             interactive
-            appendTo={()=> document.body}
+            appendTo={() => document.body}
             offset={[10, 10]}
             visible={showResult && searchResult.length > 1}
-            placement='bottom'
+            placement="bottom"
             render={(attrs) => (
                 <div className={cx('search-result')} tabIndex="-1" {...attrs}>
                     <PopperWrapper>
