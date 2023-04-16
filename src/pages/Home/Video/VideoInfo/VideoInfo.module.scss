@@ -1,0 +1,58 @@
+.wrapper {
+    display: flex;
+    align-items: center;
+    width: 510px;
+}
+
+.body {
+}
+
+.info {
+    display: flex;
+    align-items: center;
+
+    .nickname {
+        color: #161823;
+        font-weight: 700;
+        font-size: 1.6rem;
+    }
+
+    .check {
+        color: #20d5ec;
+        margin-left: 4px;
+    }
+
+    .user-name {
+        color: #161823bf;
+        font-size: 1.4rem;
+        margin-left: 8px;
+    }
+}
+
+.description {
+    color: #161823;
+    font-size: 1.4rem;
+}
+
+.tags {
+    display: flex;
+}
+
+.music {
+    color: #161823;
+    cursor: pointer;
+    margin: 4px 0 12px 0;
+}
+
+.music:hover .music-name {
+    text-decoration: underline;
+}
+
+.music-icon {
+    margin-right: 5px;
+}
+
+.music-name {
+    font-size: 1.6rem;
+    font-weight: 600;
+}

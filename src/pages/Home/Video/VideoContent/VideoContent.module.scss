@@ -1,0 +1,39 @@
+.wrapper {
+    display: flex;
+    min-height: 300px;
+    width: 320px;
+}
+
+.video {
+    max-height: 60%;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.actions {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-left: 20px;
+}
+
+.wrapper-icon {
+    text-align: center;
+    cursor: pointer;
+}
+
+.icon {
+    padding: 14px;
+    background-color: #f1f1f2;
+    border-radius: 50%;
+    font-size: 2rem;
+}
+
+.number {
+    font-size: 1.2rem;
+    color: #161823bf;
+    text-align: center;
+}
