@@ -1,0 +1,22 @@
+.wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 20px auto;
+    width: 668px;
+    border-bottom: 1px solid #e7e8e9;
+    padding-bottom: 20px;
+
+    .avatar {
+        height: 56px;
+        width: 56px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-right: 12px;
+    }
+
+    .follow {
+        width: 88px;
+        max-height: 28px;
+        margin-top: 8px;
+    }
+}

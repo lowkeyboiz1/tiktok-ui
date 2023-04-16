@@ -1,0 +1,57 @@
+.preview {
+    padding: 20px;
+    width: 320px;
+    z-index: 10;
+}
+
+.head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.avatar {
+    height: 44px;
+    width: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.preview-btn {
+    padding: 6px 16px;
+    width: 106px;
+}
+
+.body {
+    margin-top: 12px;
+    font-size: 1.8rem;
+    line-height: 1;
+}
+
+.nickname {
+}
+
+.check {
+    color: #20d5ec;
+    font-size: 1.4rem;
+    margin-left: 4px;
+}
+
+.user-name {
+    font-size: 1.4rem;
+    margin: 4px 0;
+    font-weight: 600;
+}
+
+.analytics {
+    margin-top: 8px;
+    margin-bottom: 2px;
+}
+
+.value ~ .value {
+    margin-left: 12px;
+}
+
+.label {
+    font-size: 1.7rem;
+}
