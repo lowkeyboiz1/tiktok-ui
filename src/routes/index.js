@@ -12,10 +12,10 @@ import { HeaderOnly } from '~/layouts';
 const publicRoutes = [
     { path: config.routes.home, component: Home },
     { path: config.routes.following, component: Following },
-    { path: config.routes.profile, component: Profile, layout: null },
+    { path: config.routes.profile, component: Profile},
     { path: config.routes.upload, component: Upload, layout: HeaderOnly },
     { path: config.routes.search, component: Search, layout: null },
-    { path: config.routes.search, component: Live, layout: null },
+    { path: config.routes.live, component: Live},
 ];
 
 // private routes
