@@ -44,7 +44,7 @@ function Search() {
         <HeadlessTippy
             interactive
             appendTo={() => document.body}
-            offset={[10, 10]}
+            offset={[0, 10]}
             visible={showResult && searchResult.length > 1}
             placement="bottom"
             render={(attrs) => (

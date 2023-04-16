@@ -24,7 +24,7 @@ function Sidebar() {
                     title="Following"
                     icon={<UserGroupIcon />}
                     to={config.routes.following}
-                    activeIcon={<UserGroupActiveIcon />}
+                    activeIcon={<UserGroupActiveIcon />} 
                 />
                 <MenuItem title="LIVE" icon={<LiveIcon />} to={config.routes.live} activeIcon={<LiveActiveIcon />} />
             </Menu>
