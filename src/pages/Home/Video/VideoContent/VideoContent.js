@@ -11,37 +11,6 @@ function VideoContent() {
     const [isPlay, setIsPlay] = useState(false);
     const videoRef = useRef();
 
-    const [muted, setMuted] = useState(true);
-    useEffect(() => {
-        let timer = setTimeout(() => setMuted(false), 3000);
-        return () => {
-            clearTimeout(timer);
-        };
-    }, []);
-
-    useEffect(() => {
-        let options = {
-            rootMargin: '0px',
-            threshold: [0.25, 0.75],
-        };
-
-        let handlePlay = (entries, observer) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    videoRef.current.currentTime = 0;
-                    videoRef.current.play();
-                } else {
-                    videoRef.current.currentTime = 0;
-                    videoRef.current.pause();
-                }
-            });
-        };
-
-        let observer = new IntersectionObserver(handlePlay, options);
-
-        observer.observe(videoRef.current);
-    }, []);
-
     const handleVideo = () => {
         if (isPlay) {
             videoRef.current.pause();
@@ -56,7 +25,8 @@ function VideoContent() {
             <video
                 className={cx('video')}
                 autoPlay
-                muted={muted}
+                loop
+                muted
                 onClick={handleVideo}
                 src={video.video1}
                 ref={videoRef}

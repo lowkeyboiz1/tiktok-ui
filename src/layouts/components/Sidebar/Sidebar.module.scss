@@ -1,7 +1,33 @@
+.wrapper-menu {
+    position: fixed;
+
+    &:hover *::-webkit-scrollbar-thumb {
+        background-color: rgba(22, 24, 35, 0.06);
+    }
+}
+
 .wrapper {
     width: 232px;
     padding: 20px 0 26px 8px;
     margin-left: -18px;
     overflow-y: auto;
     max-height: 100vh;
+    transition: background-color 0.8s;
+}
+
+.wrapper-menu *::-webkit-scrollbar {
+    border-radius: 0;
+    width: 8px;
+    transition: background-color 200ms ease-in-out;
+}
+.wrapper-menu *::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: transparent;
+    transition: background-color 200ms ease-in-out;
+}
+
+.wrapper-menu *::-webkit-scrollbar-track {
+    border-radius: 0;
+    background-color: rgba(0, 0, 0, 0);
+    transition: background-color 200ms ease-in-out;
 }

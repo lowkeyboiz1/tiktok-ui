@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     margin: 20px auto;
-    width: 668px;
+    width: 700px;
     border-bottom: 1px solid #e7e8e9;
     padding-bottom: 20px;
 
@@ -15,8 +15,17 @@
     }
 
     .follow {
-        width: 88px;
         max-height: 28px;
         margin-top: 8px;
+    }
+}
+
+.wrapper-btn {
+    display: flex;
+    width: 120px;
+    justify-content: flex-end;
+
+    .custom-text {
+        padding: 9px 10px;
     }
 }
