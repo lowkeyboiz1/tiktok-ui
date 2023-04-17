@@ -1,8 +1,11 @@
 import { useEffect, useRef } from 'react';
-
+import classNames from 'classnames/bind';
+import styles from './Home.module.scss';
 import useScrollSnap from 'react-use-scroll-snap';
 
 import Video from './Video';
+
+const cx = classNames.bind(styles);
 
 function Home() {
     const scrollRef = useRef(null);
@@ -13,7 +16,7 @@ function Home() {
     }, []);
 
     return (
-        <div ref={scrollRef}>
+        <div ref={scrollRef} className={cx('wrapper')}>
             <Video />
             <Video />
             <Video />

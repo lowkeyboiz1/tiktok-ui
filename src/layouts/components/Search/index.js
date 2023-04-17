@@ -20,7 +20,7 @@ function Search() {
     useEffect(() => {
         setTimeout(() => {
             setSearchResult([1, 2, 3]);
-        }, 0); 
+        }, 0);
     }, []);
 
     const handleClear = () => {

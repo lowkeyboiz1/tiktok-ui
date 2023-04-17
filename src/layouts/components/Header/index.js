@@ -312,7 +312,7 @@ function Header() {
 
                     {/* Menu Tippy */}
 
-                    <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange} >
+                    <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
                         {currentUser ? (
                             <Image className={cx('user-avatar')} src={images.avatarUser} alt="K" />
                         ) : (

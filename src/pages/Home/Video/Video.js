@@ -3,10 +3,17 @@ import styles from './Video.module.scss';
 
 import VideoInfo from './VideoInfo';
 import Button from '~/components/Button';
+import { useState } from 'react';
 
 const cx = classNames.bind(styles);
 
 function Video() {
+    const [follow, setFollow] = useState(false);
+
+    const handleFollow = () => {
+        setFollow(!follow);
+    };
+
     return (
         <div className={cx('wrapper')}>
             <img
@@ -16,9 +23,16 @@ function Video() {
             />
             <VideoInfo />
 
-            <Button outline className={cx('follow')}>
-                Follow
-            </Button>
+            <div className={cx('wrapper-btn')}>
+                <Button
+                    outline={!follow}
+                    text={follow}
+                    className={cx('follow', follow ? 'custom-text' : '')}
+                    onClick={handleFollow}
+                >
+                    {!follow ? 'Follow' : 'Following'}
+                </Button>
+            </div>
         </div>
     );
 }
