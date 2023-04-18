@@ -2,8 +2,9 @@ import { useEffect, useState, useRef } from 'react';
 import classNames from 'classnames/bind';
 import styles from './Search.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import axios from 'axios';
 
-import { faCircleXmark } from '@fortawesome/free-solid-svg-icons';
+import { faCircleXmark, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import HeadlessTippy from '@tippyjs/react/headless';
 import 'tippy.js/dist/tippy.css'; // optional
 import { Wrapper as PopperWrapper } from '~/components/Popper';
@@ -14,6 +15,8 @@ function Search() {
     const [searchResult, setSearchResult] = useState([]);
     const [searchValue, setSearchValue] = useState('');
     const [showResult, setShowResult] = useState(true);
+    const [api, setApi] = useState([]);
+    const [loading, setLoading] = useState(false);
 
     const cx = classNames.bind(styles);
     const inputRef = useRef();
@@ -27,16 +30,25 @@ function Search() {
         inputRef.current.focus();
         setSearchResult([]);
         setSearchValue('');
+        setLoading(false);
     };
 
     const handleHideResult = () => {
         setShowResult(false);
     };
 
-    const handleChange = (e) => {
+    const handleChange = async (e) => {
+        setLoading(true);
         const searchValue = e.target.value;
         if (!searchValue.startsWith(' ')) {
             setSearchValue(searchValue);
+            if (searchValue.length > 0) {
+                const result = await axios.get(`https://server-youtube.onrender.com/search/${searchValue}`);
+                setApi(result.data);
+                setLoading(false);
+            } else {
+                setLoading(false);
+            }
         }
     };
 
@@ -45,16 +57,26 @@ function Search() {
             interactive
             appendTo={() => document.body}
             offset={[0, 10]}
-            visible={showResult && searchResult.length > 1}
+            visible={showResult && searchValue.length > 0}
             placement="bottom"
             render={(attrs) => (
                 <div className={cx('search-result')} tabIndex="-1" {...attrs}>
                     <PopperWrapper>
                         <h4 className={cx('search-title')}>Accounts</h4>
+                        {/* <AccountItem />
                         <AccountItem />
                         <AccountItem />
-                        <AccountItem />
-                        <AccountItem />
+                        <AccountItem /> */}
+                        {api ? <span>Loading</span> : ''}
+                        {api.map((item, index) => (
+                            <AccountItem
+                                key={index}
+                                avatar={item.avatar}
+                                name={item.name}
+                                userName={item.name}
+                                check={item.check}
+                            />
+                        ))}
                     </PopperWrapper>
                 </div>
             )}
@@ -69,12 +91,12 @@ function Search() {
                     spellCheck={false}
                     onChange={handleChange}
                 />
-                {!!searchValue && (
+                {!!searchValue && !loading && (
                     <button className={cx('clear')} onClick={handleClear}>
                         <FontAwesomeIcon icon={faCircleXmark} />
                     </button>
                 )}
-                {/* <FontAwesomeIcon className={cx('loading')} icon={faSpinner} /> */}
+                {loading && <FontAwesomeIcon className={cx('loading')} icon={faSpinner} />}
                 <button className={cx('btn-search')} onMouseDown={(e) => e.preventDefault()}>
                     <SearchIcon />
                 </button>

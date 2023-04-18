@@ -4,7 +4,7 @@ import SuggestedAccountItem from './SuggestedAccountItem';
 
 const cx = classNames.bind(styles);
 
-function SuggestedAccounts({ label }) {
+function SuggestedAccounts({ label, data }) {
     return (
         <div className={cx('wrapper')}>
             <p className={cx('label')}>{label}</p>
